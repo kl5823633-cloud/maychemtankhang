@@ -1,0 +1,19 @@
+{
+    "bot": {
+        "name": "MayChemTanKhang Bot",
+        "version": "1.0.0",
+        "author": "Tan Khang",
+        "support_server": ""
+    },
+    "settings": {
+        "default_prefix": "!",
+        "welcome_message": true,
+        "log_commands": true
+    },
+    "features": {
+        "music": false,
+        "moderation": true,
+        "fun": true,
+        "utility": true
+    }
+}
