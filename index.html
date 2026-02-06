@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord Bot Control Panel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #36393f;
+            color: white;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #2f3136;
+            padding: 30px;
+            border-radius: 10px;
+        }
+        .btn {
+            background: #7289da;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 5px;
+        }
+        .btn:hover {
+            background: #5b6eae;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🤖 Discord Bot Dashboard</h1>
+        <p>Control your Discord bot from web interface</p>
+        
+        <div class="section">
+            <h3>Bot Status</h3>
+            <div id="bot-status">Loading...</div>
+            <button class="btn" onclick="startBot()">Start Bot</button>
+            <button class="btn" onclick="stopBot()">Stop Bot</button>
+        </div>
+        
+        <div class="section">
+            <h3>Send Message</h3>
+            <input type="text" id="message" placeholder="Enter message...">
+            <button class="btn" onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        // Đây là frontend, backend cần xử lý an toàn
+        async function startBot() {
+            const response = await fetch('/api/start-bot', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'}
+            });
+            const data = await response.json();
+            alert(data.message);
+        }
+    </script>
+</body>
+</html>
